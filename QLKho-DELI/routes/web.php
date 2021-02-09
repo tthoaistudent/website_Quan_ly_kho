@@ -21,3 +21,7 @@ Route::get('/', function () {
 
 Route::get('/home','HomeController@HomePages');
 
+// Quản lý doanh mục
+
+Route::get('/category','CategoryController@index');
+
