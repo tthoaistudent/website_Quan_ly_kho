@@ -1,25 +1,39 @@
 @extends('welcome')
 @section('content')
-    <a href="/add-category"><button type="button" class="btn btn-primary">Thêm doanh mục</button></a>
-    <table class="table table-hover text-nowrap" style="margin-top:10px">
+    <table class="table table-hover text-nowrap my-category" style="margin-top:10px">
         <thead>
         <tr>
             <th>ID</th>
             <th>Tên doanh mục</th>
-            <th>Số lượng</th>
             <th>Hành động</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>183</td>
-            <td>John Doe</td>
-            <td><span class="tag tag-success">22</span></td>
-            <td>
-                <a href="/update-category"><button type="button" class="btn btn-warning">Sửa</button></a>
-                <a href="/delete-category"><button type="button" class="btn btn-danger">Xóa</button></a>
-            </td>
-        </tr>
+        @foreach ($show_category as $key => $category)
+            <tr>
+                <td>{{$category->category_id}}</td>
+                <td>{{$category->category_name}}</td>
+                <td>
+                    <a href="/update-category/{{$category->category_id}}"><button type="button" class="btn btn-warning">Sửa</button></a>
+                </td>
+            </tr>
+        @endforeach
+
+            <tr>
+                <td></td>
+                <form action="{{URL::to('/add-category')}}" method="POST">
+                    {{csrf_field()}}
+                    <td>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-label="Recipient's username" name="category_name" aria-describedby="button-addon2">
+                        </div>
+
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Thêm</button>
+                    </td>
+                </form>
+            </tr>
         </tbody>
     </table>
 @endsection
