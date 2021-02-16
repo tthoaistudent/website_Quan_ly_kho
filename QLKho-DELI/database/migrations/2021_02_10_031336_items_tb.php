@@ -11,9 +11,17 @@ class ItemsTb extends Migration
      *
      * @return void
      */
+
     public function up()
     {
-        //
+        Schema::create('items_tb', function (Blueprint $table) {
+            $table->Increments('item_id');
+            $table->string('item_name');
+            $table->string('item_DVT');
+            $table->string('item_date');
+            $table->integer('item_soluong');
+            $table->timestamps();
+        });
     }
 
     /**
