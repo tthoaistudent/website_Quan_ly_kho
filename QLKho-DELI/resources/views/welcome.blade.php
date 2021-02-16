@@ -39,6 +39,14 @@
       width: 40%;
     }
 
+    .add-item-form{
+      width: 60%;
+    }
+
+    .card-footer{
+      background-color: transparent !important;
+    }
+
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">

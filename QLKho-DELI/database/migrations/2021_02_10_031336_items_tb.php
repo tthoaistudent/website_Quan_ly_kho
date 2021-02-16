@@ -19,6 +19,7 @@ class ItemsTb extends Migration
             $table->string('item_name');
             $table->string('item_DVT');
             $table->string('item_date');
+            $table->string('item_category');
             $table->integer('item_soluong');
             $table->timestamps();
         });

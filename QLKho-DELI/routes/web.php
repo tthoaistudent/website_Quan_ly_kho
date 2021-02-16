@@ -31,3 +31,7 @@ Route::post('/update-category-value/{category_id}','CategoryController@update_ca
 //Quản lý kho
 
 Route::get('/items','ItemsController@index');
+Route::get('/add-item','ItemsController@add_item');
+Route::post('/save-item','ItemsController@save_item');
+Route::get('/update-item/{item_id}','ItemsController@update_item');
+Route::post('/update-item-value/{item_id}','ItemsController@update_item_value');
